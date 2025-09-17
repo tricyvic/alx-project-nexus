@@ -1,28 +1,28 @@
-'use client';
-import { useState } from 'react';
-import { useRouter } from 'next/navigation';
-import { useAuth } from '../../context/AuthContext';
+"use client";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { useAuth } from "../../context/AuthContext";
 
 export default function LoginPage() {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
   const router = useRouter();
   const { setToken } = useAuth();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setError('');
+    setError("");
     try {
       const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/token/`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username, password }),
       });
-      if (!res.ok) throw new Error('Invalid credentials');
+      if (!res.ok) throw new Error("Invalid credentials");
       const data = await res.json();
-      setToken(data.access); // save token to context & localStorage
-      router.push('/'); // go home
+      localStorage.setItem("token", data.access);
+      router.push("/"); 
     } catch (err: any) {
       setError(err.message);
     }
@@ -37,14 +37,14 @@ export default function LoginPage() {
           className="w-full border p-2 rounded"
           placeholder="Username"
           value={username}
-          onChange={e => setUsername(e.target.value)}
+          onChange={(e) => setUsername(e.target.value)}
         />
         <input
           className="w-full border p-2 rounded"
           placeholder="Password"
           type="password"
           value={password}
-          onChange={e => setPassword(e.target.value)}
+          onChange={(e) => setPassword(e.target.value)}
         />
         <button
           type="submit"

@@ -19,6 +19,7 @@ urlpatterns = [
     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     path('api/register/', RegisterView.as_view(), name='register'),
     path('api/orders/', OrderCreateView.as_view(), name='order-list-create'),
+    path('orders/', OrderCreateView.as_view(), name='order-create'),
     path('api/', include(router.urls)),
 ]
 

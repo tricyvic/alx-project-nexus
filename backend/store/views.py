@@ -13,9 +13,12 @@ class OrderViewSet(viewsets.ModelViewSet):
     permission_classes = [permissions.IsAuthenticated]  # only logged-in
 
 
-class OrderCreateView(generics.ListCreateAPIView):
-    serializer_class = OrderCreateSerializer
-    permission_classes = [permissions.IsAuthenticated]
+class OrderCreateView(generics.CreateAPIView):
+    serializer_class = OrderSerializer
+    permission_classes = [permissions.IsAuthenticated]  # require login
 
-    def get_queryset(self):
-        return Order.objects.filter(user=self.request.user)
+    def get_serializer_context(self):
+        # ensures request is in serializer.context so we can get request.user
+        context = super().get_serializer_context()
+        context.update({'request': self.request})
+        return context

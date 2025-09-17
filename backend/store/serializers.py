@@ -8,19 +8,25 @@ class ProductSerializer(serializers.ModelSerializer):
 
 
 class OrderItemSerializer(serializers.ModelSerializer):
-    product = ProductSerializer(read_only=True)
-
     class Meta:
         model = OrderItem
-        fields = ['id', 'product', 'quantity', 'price_at_purchase']
-
+        fields = ['product', 'quantity']
 
 class OrderSerializer(serializers.ModelSerializer):
-    items = OrderItemSerializer(many=True, read_only=True)
+    items = OrderItemSerializer(many=True)
 
     class Meta:
         model = Order
-        fields = ['id', 'user', 'status', 'created_at', 'items']
+        fields = ['id', 'address', 'items', 'created_at']  # no user field here
+
+    def create(self, validated_data):
+        items_data = validated_data.pop('items')
+        # automatically attach the logged-in user from the view context
+        user = self.context['request'].user
+        order = Order.objects.create(user=user, **validated_data)
+        for item_data in items_data:
+            OrderItem.objects.create(order=order, **item_data)
+        return order
 
 class OrderItemCreateSerializer(serializers.ModelSerializer):
     product_id = serializers.PrimaryKeyRelatedField(
