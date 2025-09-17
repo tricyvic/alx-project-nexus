@@ -1,6 +1,8 @@
 'use client';
 
+import Layout from '@/components/Layout';
 import { useCart } from '../../context/CartContext';
+
 
 export default function CartPage() {
   const { cart, removeFromCart, clearCart } = useCart();
@@ -13,12 +15,14 @@ export default function CartPage() {
   }
 
   return (
+    <Layout>
     <div className="max-w-4xl mx-auto p-6">
       <h1 className="text-3xl font-bold mb-6">Shopping Cart</h1>
       <ul className="divide-y">
         {cart.map((item) => (
           <li key={item.productId} className="py-4 flex justify-between items-center">
             <div>
+                
               <p className="font-medium">{item.name}</p>
               <p className="text-sm text-gray-600">
                 ${item.price} × {item.quantity}
@@ -52,5 +56,6 @@ export default function CartPage() {
         </div>
       </div>
     </div>
+    </Layout>
   );
 }

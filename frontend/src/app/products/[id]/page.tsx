@@ -3,6 +3,8 @@
 import { use } from "react";
 import { useEffect, useState } from "react";
 import { useCart } from "../../../context/CartContext";
+import Layout from "@/components/Layout";
+
 
 interface Product {
   id: number;
@@ -52,6 +54,7 @@ export default function ProductDetailPage({
   };
 
   return (
+    <Layout>
     <div className="max-w-3xl mx-auto p-6">
       
       <h1 className="text-3xl font-bold mb-4">{product.name}</h1>
@@ -67,5 +70,6 @@ export default function ProductDetailPage({
         Add to Cart
       </button>
     </div>
+    </Layout>
   );
 }

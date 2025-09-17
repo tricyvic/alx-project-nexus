@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import Layout from '../components/Layout';
 
 export default async function HomePage() {
   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/products/`, {
@@ -8,8 +9,9 @@ export default async function HomePage() {
   const products = await res.json();
 
   return (
-    <main className="p-8">
-      <h1 className="text-3xl font-bold mb-6">Watches</h1>
+    <Layout>
+      <main className="p-8 text-black">
+      <h1 className="text-3xl font-bold mb-6 " >Watches</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {products.map((p: any) => (
           <Link
@@ -34,5 +36,7 @@ export default async function HomePage() {
         ))}
       </div>
     </main>
+    </Layout>
+    
   );
 }

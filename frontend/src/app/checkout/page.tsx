@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { useCart } from '../../context/CartContext';
+import Layout from '@/components/Layout';
 
 export default function CheckoutPage() {
   const { cart, clearCart } = useCart();
@@ -56,6 +57,7 @@ export default function CheckoutPage() {
   const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
   return (
+    <Layout>
     <div className="max-w-lg mx-auto p-6">
       <h1 className="text-3xl font-bold mb-6">Checkout</h1>
 
@@ -111,5 +113,6 @@ export default function CheckoutPage() {
 
       {message && <p className="mt-4">{message}</p>}
     </div>
+    </Layout>
   );
 }
