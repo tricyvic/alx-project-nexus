@@ -11,7 +11,7 @@ export default function CartPage() {
   const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
   if (cart.length === 0) {
-    return <p className="p-6 text-center">Your cart is empty.</p>;
+    return <Layout><p className="p-6 text-center">Your cart is empty.</p></Layout>;
   }
 
   return (

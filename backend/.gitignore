@@ -3,4 +3,6 @@ venv/
 step.txt
 nexus/__pycache__/
 store/__pycache__/
+nexus/__pycache__/settings.cpython-312.pyc
+store/migrations/__pycache__/
 

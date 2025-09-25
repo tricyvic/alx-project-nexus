@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.urls import path,include
 from rest_framework import routers
-from store.views import ProductViewSet, OrderViewSet, OrderCreateView
+from store.views import ProductViewSet, OrderViewSet, OrderCreateView, CategoryViewSet
 from django.conf import settings
 from django.conf.urls.static import static
 from store.views_auth import RegisterView
@@ -12,6 +12,7 @@ from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 router = routers.DefaultRouter()
 router.register(r'products', ProductViewSet)
 router.register(r'orders', OrderViewSet)
+router.register(r'categories', CategoryViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
