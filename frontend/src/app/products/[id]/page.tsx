@@ -86,16 +86,16 @@ export default function ProductDetailPage({
             </span>
           </h1>
           <div className="text-sm text-gray-500 mb-1">
-            Booty mask for stretch marks, acne, and scars
+            {product.description}
           </div>
           <div className="text-xs text-pink-400 mb-2 font-semibold">
             Limited stock!
           </div>
           <div className="text-2xl font-bold mb-1">
-            ${product.price}
+            KSh {product.price}
           </div>
           <div className="text-xs text-gray-500 mb-2">
-            or 4 interest-free payments of ${(product.price / 4)}{" "}
+            or 4 interest-free payments of ksh{(product.price / 4)}{" "}
             with{" "}
             <span className="bg-gray-100 px-2 py-0.5 rounded text-teal-600 font-semibold">
               afterpay
@@ -108,7 +108,7 @@ export default function ProductDetailPage({
             </span>
             <br />
             <span className="font-semibold text-blue-700">FREE</span>{" "}
-            <span className="text-gray-600">shipping on orders $75+</span>
+            <span className="text-gray-600">shipping on orders KSh 75+</span>
           </div>
           <div className="mb-2">
             <label className="flex items-center gap-2">
@@ -121,7 +121,7 @@ export default function ProductDetailPage({
               <span>
                 One-time purchase:{" "}
                 <span className="font-semibold">
-                  ${product.price}
+                  KSh {product.price}
                 </span>
               </span>
             </label>
@@ -130,7 +130,7 @@ export default function ProductDetailPage({
               <span>
                 Subscribe &amp; Save (15%):{" "}
                 <span className="font-semibold">
-                  ${(product.price * 0.85)}
+                  KSh {(product.price * 0.85)}
                 </span>
               </span>
             </label>
@@ -190,19 +190,10 @@ export default function ProductDetailPage({
             {tab === "description" && (
               <div>
                 <div className="font-bold mb-2">
-                  Our collagen-infused booty mask for stretch marks and fine
-                  lines.
+                  {product.name}
                 </div>
                 <div className="text-gray-700 text-sm leading-relaxed">
-                  Soften and smooth your skin in the shower with this
-                  lightweight mask made for your booty. Formulated with kaolin
-                  clay to draw out impurities and collagen to support
-                  elasticity. The active ingredients in this booty mask all help
-                  soothe, hydrate, and deeply moisturize skin. Free of silicones
-                  and parabens, it has a soft sweet scent of peaches without
-                  being overpowering. Just apply directly to cellulite, stretch
-                  marks or any areas that need a little TLC to reveal
-                  silky-smooth and supple skin.
+                  {product.description}
                 </div>
               </div>
             )}

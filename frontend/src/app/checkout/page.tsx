@@ -16,7 +16,7 @@ export default function CheckoutPage() {
     setMessage('');
 
     try {
-      const token = localStorage.getItem('token');
+      const token = localStorage.getItem('access_token');
 
       const body = {
         address,
