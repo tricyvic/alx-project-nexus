@@ -5,6 +5,7 @@ import { useCart } from '../context/CartContext';
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const { cart } = useCart();
+  const isLoggedIn = typeof window !== 'undefined' && !!localStorage.getItem('jwt');
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -14,6 +15,28 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             🕒 WatchStore
           </Link>
           <nav className="space-x-4">
+            
+            
+            { !isLoggedIn ? (
+              <>
+              <Link href="/profile" className="hover:text-blue-600">
+                Profile
+              </Link>
+              <button className="hover:text-blue-600" onClick={() => {/* handle logout */}}>
+                Logout
+              </button>
+              </>
+            ) : (
+              <>
+              <Link href="/login" className="hover:text-blue-600">
+                Login
+              </Link>
+              <Link href="/register" className="hover:text-blue-600">
+                Register
+              </Link>
+              </>
+            )}
+
             <Link href="/" className="hover:text-blue-600">
               Home
             </Link>
