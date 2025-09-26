@@ -1,0 +1,39 @@
+services:
+  - type: web
+    name: nexus-backend
+    runtime: python
+    dockerfilePath: backend/Dockerfile
+    envVars:
+      - key: POSTGRES_DB
+        value: nexusdb
+      - key: POSTGRES_USER
+        value: nexususer
+      - key: POSTGRES_PASSWORD
+        value: nexuspass
+      - key: POSTGRES_HOST
+        fromDatabase:
+          name: nexus-db
+          property: host
+      - key: POSTGRES_PORT
+        value: "5432"
+      - key: DJANGO_SECRET_KEY
+        value: changeme
+      - key: DJANGO_DEBUG
+        value: "False"
+    autoDeploy: true
+
+  - type: web
+    name: nexus-frontend
+    buildCommand: cd frontend && npm install && npm run build
+    staticPublishPath: frontend/out
+    envVars:
+      - key: NEXT_PUBLIC_API_URL
+        value: https://nexus-backend.onrender.com
+    autoDeploy: true
+
+databases:
+  - name: nexus-db
+    databaseName: nexusdb
+    user: nexususer
+    plan: free
+    postgresMajorVersion: "15"
