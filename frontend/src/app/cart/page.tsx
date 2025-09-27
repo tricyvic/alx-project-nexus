@@ -25,7 +25,7 @@ export default function CartPage() {
                 
               <p className="font-medium">{item.name}</p>
               <p className="text-sm text-gray-600">
-                ${item.price} × {item.quantity}
+                KSh {item.price} × {item.quantity}
               </p>
             </div>
             <div>
@@ -40,7 +40,7 @@ export default function CartPage() {
         ))}
       </ul>
       <div className="flex justify-between items-center mt-6">
-        <p className="text-xl font-semibold">Total: ${total.toFixed(2)}</p>
+        <p className="text-xl font-semibold">Total: KSh {total.toFixed(2)}</p>
         <div className="space-x-3">
           <button
             onClick={clearCart}
@@ -49,6 +49,7 @@ export default function CartPage() {
             Clear Cart
           </button>
           <button
+            onClick={() => window.location.href = '/checkout'}
             className="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700"
           >
             Checkout

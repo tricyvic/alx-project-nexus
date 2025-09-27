@@ -3,11 +3,31 @@ import type { NextConfig } from "next";
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ['127.0.0.1', 'localhost', 'backend'], //(allowed image hosts for dev)
+    domains: ['127.0.0.1', 'localhost', 'backend', 'images.pexels.com'],
     remotePatterns: [
-      { protocol: 'http', hostname: 'backend', port: '8000' },
-      { protocol: 'http', hostname: 'localhost', port: '8000' },
-      { protocol: 'http', hostname: '127.0.0.1', port: '8000' },
+      { 
+        protocol: 'http', 
+        hostname: 'backend', 
+        port: '8000',
+        pathname: '/media/**',
+      },
+      { 
+        protocol: 'http', 
+        hostname: 'localhost', 
+        port: '8000',
+        pathname: '/media/**',
+      },
+      { 
+        protocol: 'http', 
+        hostname: '127.0.0.1', 
+        port: '8000',
+        pathname: '/media/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'images.pexels.com',
+        pathname: '/photos/**',
+      },
     ],
   },
   async rewrites() {

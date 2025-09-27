@@ -24,6 +24,13 @@ class ProductViewSet(viewsets.ModelViewSet):
         if category:
             qs = qs.filter(category__name__iexact=category)
         return qs
+    
+class AllProductsViewSet(viewsets.ModelViewSet):
+    queryset = Product.objects.all()
+    serializer_class = ProductSerializer
+    permission_classes = [permissions.AllowAny]
+    ordering_fields = ['price', 'name']
+    ordering = ['name']
 
 class OrderViewSet(viewsets.ModelViewSet):
     queryset = Order.objects.all()

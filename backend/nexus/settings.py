@@ -28,6 +28,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'drf_spectacular',
     'corsheaders',
     'store',
 ]
@@ -126,6 +127,14 @@ REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ),
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
 }
 
 CORS_ALLOW_ALL_ORIGINS = True 
+
+# drf-spectacular settings
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'WatchStore API',
+    'DESCRIPTION': 'API for managing an e-commerce watch store',
+    'VERSION': '1.0.0',
+}
