@@ -28,7 +28,7 @@ interface Product {
   status?: "Available" | "Disabled";
   date?: string;
 }
-let x =
+const x =
   "http://127.0.0.1:8000/media/products/Screenshot_from_2025-07-29_16-09-36_nQvpzGA.png";
 
 export default function HomePage() {
