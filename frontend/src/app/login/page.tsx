@@ -49,7 +49,8 @@ export default function LoginPage() {
       />
       
       {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-black bg-opacity-60" />
+      <div className="absolute inset-0 bg-black bg-opacity-60"
+      />
       
       {/* Content */}
       <div className="relative z-10 min-h-screen flex items-center justify-center px-4">
@@ -57,7 +58,7 @@ export default function LoginPage() {
           {/* Header */}
           <div className="text-center mb-8">
             <Link href="/" className="inline-block">
-              <h1 className="text-4xl font-bold text-white mb-2">🕒 WatchStore</h1>
+              <h1 className="text-4xl font-bold text-white mb-2">NEXUS WatchStore</h1>
             </Link>
             <p className="text-gray-300">Welcome back to luxury timepieces</p>
           </div>
@@ -95,7 +96,7 @@ export default function LoginPage() {
               </div>
 
               <div className="flex items-center justify-between">
-                <label className="flex items-center text-white">
+                <label className="flex items-center text-gray-800">
                   <input
                     type="checkbox"
                     className="w-4 h-4 text-blue-600 bg-white bg-opacity-20 border-white border-opacity-30 rounded focus:ring-blue-500 focus:ring-2"
@@ -124,7 +125,7 @@ export default function LoginPage() {
             </form>
 
             <div className="mt-6 text-center">
-              <p className="text-gray-300">
+              <p className="text-gray-900">
                 Don't have an account?{" "}
                 <Link href="/signup" className="text-blue-400 hover:text-blue-300 font-semibold transition-colors">
                   Sign up here
@@ -135,8 +136,8 @@ export default function LoginPage() {
 
           {/* Footer */}
           <div className="text-center mt-8">
-            <p className="text-gray-400 text-sm">
-              © 2024 WatchStore. All rights reserved.
+            <p className="text-sm text-amber-500">
+              © 2025 ALX NEXUSWatchStore. All rights reserved.
             </p>
           </div>
         </div>

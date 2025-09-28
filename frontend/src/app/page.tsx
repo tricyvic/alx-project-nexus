@@ -151,7 +151,7 @@ export default function HomePage() {
                     placeholder="Search for watches, brands, or categories..."
                     value={search}
                     onChange={(e) => setSearch(e.target.value)}
-                    className="w-full border-2 border-gray-200 rounded-xl px-6 py-4 text-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-gray-50"
+                    className="w-full border-2 border-gray-200 rounded-xl px-6 py-4 text-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-gray-50"
                   />
                   <button className="absolute right-3 top-1/2 -translate-y-1/2 bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors">
                     Search

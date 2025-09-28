@@ -69,7 +69,7 @@ export default function SignupPage() {
           {/* Header */}
           <div className="text-center mb-8">
             <Link href="/" className="inline-block">
-              <h1 className="text-4xl font-bold text-white mb-2">🕒 WatchStore</h1>
+              <h1 className="text-4xl font-bold text-white mb-2">NEXUS WatchStore</h1>
             </Link>
             <p className="text-gray-300">Join our luxury timepiece community</p>
           </div>
@@ -87,7 +87,7 @@ export default function SignupPage() {
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <input
-                  className="w-full bg-white bg-opacity-20 border border-white border-opacity-30 rounded-xl px-6 py-4 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent backdrop-blur-sm"
+                  className="w-full bg-white bg-opacity-20 border border-white border-opacity-30 rounded-xl px-6 py-4 text-gray-800 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent backdrop-blur-sm"
                   placeholder="Username"
                   value={username}
                   onChange={e => setUsername(e.target.value)}
@@ -97,8 +97,8 @@ export default function SignupPage() {
               
               <div>
                 <input
-                  className="w-full bg-white bg-opacity-20 border border-white border-opacity-30 rounded-xl px-6 py-4 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent backdrop-blur-sm"
-                  placeholder="Email Address"
+                  className="w-full bg-white bg-opacity-20 border border-white border-opacity-30 rounded-xl px-6 py-4 text-gray-800 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent backdrop-blur-sm"
+                  placeholder="Email"
                   type="email"
                   value={email}
                   onChange={e => setEmail(e.target.value)}
@@ -108,7 +108,7 @@ export default function SignupPage() {
 
               <div>
                 <input
-                  className="w-full bg-white bg-opacity-20 border border-white border-opacity-30 rounded-xl px-6 py-4 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent backdrop-blur-sm"
+                  className="w-full bg-white bg-opacity-20 border border-white border-opacity-30 rounded-xl px-6 py-4 text-gray-800 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent backdrop-blur-sm"
                   placeholder="Password"
                   type="password"
                   value={password}
@@ -119,7 +119,7 @@ export default function SignupPage() {
 
               <div>
                 <input
-                  className="w-full bg-white bg-opacity-20 border border-white border-opacity-30 rounded-xl px-6 py-4 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent backdrop-blur-sm"
+                  className="w-full bg-white bg-opacity-20 border border-white border-opacity-30 rounded-xl px-6 py-4 text-gray-800 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent backdrop-blur-sm"
                   placeholder="Confirm Password"
                   type="password"
                   value={confirmPassword}
@@ -129,7 +129,7 @@ export default function SignupPage() {
               </div>
 
               <div className="flex items-center">
-                <label className="flex items-center text-white">
+                <label className="flex items-center text-gray-500">
                   <input
                     type="checkbox"
                     className="w-4 h-4 text-blue-600 bg-white bg-opacity-20 border-white border-opacity-30 rounded focus:ring-blue-500 focus:ring-2"
@@ -176,8 +176,8 @@ export default function SignupPage() {
 
           {/* Footer */}
           <div className="text-center mt-8">
-            <p className="text-gray-400 text-sm">
-              © 2024 WatchStore. All rights reserved.
+            <p className="text-sm text-amber-500">
+              © 2025 ALX NEXUSWatchStore. All rights reserved.
             </p>
           </div>
         </div>
