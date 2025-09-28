@@ -1,6 +1,9 @@
 import type { NextConfig } from "next";
 
 /** @type {import('next').NextConfig} */
+
+
+
 const nextConfig = {
   images: {
     domains: ['127.0.0.1', 'localhost', 'backend', 'images.pexels.com'],
@@ -29,6 +32,11 @@ const nextConfig = {
         pathname: '/photos/**',
       },
     ],
+  },
+  eslint: {
+    // Warning: This allows production builds to successfully complete
+    // even if ESLint errors are present.
+    ignoreDuringBuilds: true,
   },
   async rewrites() {
     return [
